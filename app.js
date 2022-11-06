@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const bodyParser = require('body-parser');
+const cors = require('cors');
 require('dotenv').config();
 const userControlers = require('./routes/userControlers');
 const acountControllers= require('./routes/acountControllers');
@@ -8,7 +8,7 @@ const acountControllers= require('./routes/acountControllers');
 app.get('/' , (req,res) => {
     console.log('this is page home')
 })
-
+app.use(cors());
 app.use(express.urlencoded({extended:true}));
 app.use(express.json())
 
